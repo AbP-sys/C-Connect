@@ -1,5 +1,5 @@
 import random
-import gui.build.connection as cassandra
+import connection as cassandra
 #selection = random.randint(1,4)
 userselection = { 1:"general",2:"placement",3:"exam",4:"other"}
 

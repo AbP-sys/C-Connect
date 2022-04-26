@@ -10,12 +10,12 @@ from pathlib import Path
 
 from tkinter import *
 # Explicit imports to satisfy Flake8
-import gui.build.login
+import login
 from gui import StudentLogin, LoginError,a_dashboard
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path("./AdminLoginAssets")
+ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -25,23 +25,15 @@ def authenticate(window,user,pwd):
     """
     checks with the database for authentication and redirects user accordingly
     """
-    auth = gui.build.login.authentication(user,pwd)
+    auth = login.authentication(user,pwd)
     if(auth == -1):
-        gui.LoginError.error(window)
+        LoginError.error(window)
     else:
-        gui.a_dashboard.dashboard(window)
+        a_dashboard.dashboard(window)
 
-def portal(caller) :
-    caller.destroy()
-    window = Tk()
-    window.title('C-Connect')
+def portal(window) :
     user = StringVar()
     pwd = StringVar()
-
-
-    window.geometry("411x891")
-    window.configure(bg = "#FFFFFF")
-
 
     canvas = Canvas(
         window,
@@ -89,7 +81,7 @@ def portal(caller) :
     )
 
     button_image_1 = PhotoImage(
-        file=relative_to_assets("button_1.png"))
+        file=relative_to_assets("admin_panel.png"))
     button_1 = Button(
         image=button_image_1,
         borderwidth=0,
@@ -105,7 +97,7 @@ def portal(caller) :
     )
 
     button_image_2 = PhotoImage(
-        file=relative_to_assets("button_2.png"))
+        file=relative_to_assets("student_panel.png"))
     button_2 = Button(
         image=button_image_2,
         borderwidth=0,
@@ -121,7 +113,7 @@ def portal(caller) :
     )
 
     button_image_3 = PhotoImage(
-        file=relative_to_assets("button_3.png"))
+        file=relative_to_assets("sign_in.png"))
     button_3 = Button(
         image=button_image_3,
         borderwidth=0,
@@ -158,7 +150,7 @@ def portal(caller) :
     )
 
     entry_image_2 = PhotoImage(
-        file=relative_to_assets("entry_2.png"))
+        file=relative_to_assets("entry_1.png"))
     entry_bg_2 = canvas.create_image(
         197.0,
         377.0,
@@ -196,7 +188,7 @@ def portal(caller) :
     )
 
     image_image_3 = PhotoImage(
-        file=relative_to_assets("image_3.png"))
+        file=relative_to_assets("book.png"))
     image_3 = canvas.create_image(
         287.0,
         135.0,
@@ -204,7 +196,7 @@ def portal(caller) :
     )
 
     image_image_4 = PhotoImage(
-        file=relative_to_assets("image_4.png"))
+        file=relative_to_assets("image_5.png"))
     image_4 = canvas.create_image(
         205.505859375,
         277.0,
@@ -212,7 +204,7 @@ def portal(caller) :
     )
 
     image_image_5 = PhotoImage(
-        file=relative_to_assets("image_5.png"))
+        file=relative_to_assets("line.png"))
     image_5 = canvas.create_image(
         198.0,
         400.0,
@@ -220,7 +212,7 @@ def portal(caller) :
     )
 
     image_image_6 = PhotoImage(
-        file=relative_to_assets("image_6.png"))
+        file=relative_to_assets("line.png"))
     image_6 = canvas.create_image(
         198.0,
         477.0,
@@ -228,7 +220,7 @@ def portal(caller) :
     )
 
     image_image_7 = PhotoImage(
-        file=relative_to_assets("image_7.png"))
+        file=relative_to_assets("pencils.png"))
     image_7 = canvas.create_image(
         213.0,
         837.9807739257812,

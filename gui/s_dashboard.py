@@ -11,7 +11,7 @@ from pathlib import Path
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 from gui import gen
-from gui.build import mainmenu
+import mainmenu
 
 
 OUTPUT_PATH = Path(__file__).parent

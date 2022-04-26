@@ -1,4 +1,4 @@
-import gui.build.connection as connection
+import connection
 
 class userDetails:
     def __init__(self,email, name, DOB, branch, year,type):

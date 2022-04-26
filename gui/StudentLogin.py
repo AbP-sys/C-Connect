@@ -6,7 +6,7 @@ This file launches the login page for students
 # https://github.com/ParthJadhav/Tkinter-Designer
 from pathlib import Path
 from tkinter import *
-import gui.build.login
+import login
 from gui import LoginError, s_dashboard,AdminLogin
 
 
@@ -21,23 +21,20 @@ def authenticate(window,user,pwd):
     """
     checks with the database for authentication and redirects user accordingly
     """
-    auth = gui.build.login.authentication(user,pwd)
+    auth = login.authentication(user,pwd)
     if(auth == -1):
-        gui.LoginError.error(window)
+        LoginError.error(window)
     else:
-        userD = gui.build.login.fetchdetails(user)
-        gui.s_dashboard.dashboard(window,userD)
+        userD = login.fetchdetails(user)
+        s_dashboard.dashboard(window,userD)
 
 
-def portal(caller):
-    caller.destroy()
-    window = Tk()
-    window.title('C-Connect')
+def portal(window):
+
+    frame = Frame(window)
+    frame.pack()
     user = StringVar()
     pwd = StringVar()
-
-    window.geometry("411x891")
-    window.configure(bg = "#FFFFFF")
 
 
     canvas = Canvas(
@@ -91,7 +88,7 @@ def portal(caller):
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: gui.AdminLogin.portal(window), #print("button_1 clicked"),
+    command=lambda: AdminLogin.portal(window), #print("button_1 clicked"),
     relief="flat"
     )
     button_1.place(
@@ -118,7 +115,7 @@ def portal(caller):
     )
 
     button_image_3 = PhotoImage(
-    file=relative_to_assets("button_3.png"))
+    file=relative_to_assets("sign_in.png"))
     button_3 = Button(
     image=button_image_3,
     borderwidth=0,
@@ -156,7 +153,7 @@ def portal(caller):
     )
 
     entry_image_2 = PhotoImage(
-    file=relative_to_assets("entry_2.png"))
+    file=relative_to_assets("entry_1.png"))
     entry_bg_2 = canvas.create_image(
     197.0,
     377.0,
@@ -194,7 +191,7 @@ def portal(caller):
     )
 
     image_image_2 = PhotoImage(
-    file=relative_to_assets("image_2.png"))
+    file=relative_to_assets("book.png"))
     image_2 = canvas.create_image(
     287.0,
     135.0,
@@ -202,7 +199,7 @@ def portal(caller):
     )
 
     image_image_3 = PhotoImage(
-    file=relative_to_assets("image_3.png"))
+    file=relative_to_assets("pencils.png"))
     image_3 = canvas.create_image(
     213.0,
     837.9807739257812,
@@ -218,7 +215,7 @@ def portal(caller):
     )
 
     image_image_5 = PhotoImage(
-    file=relative_to_assets("image_5.png"))
+    file=relative_to_assets("line.png"))
     image_5 = canvas.create_image(
     198.0,
     400.0,
@@ -226,7 +223,7 @@ def portal(caller):
     )
 
     image_image_6 = PhotoImage(
-    file=relative_to_assets("image_6.png"))
+    file=relative_to_assets("line.png"))
     image_6 = canvas.create_image(
     198.0,
     477.0,

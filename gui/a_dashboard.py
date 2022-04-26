@@ -302,7 +302,7 @@ def dashboard(caller):
     )
 
     image_image_5 = PhotoImage(
-        file=relative_to_assets("image_5.png"))
+        file=relative_to_assets("line.png"))
     image_5 = canvas.create_image(
         208.0,
         286.0,
@@ -310,7 +310,7 @@ def dashboard(caller):
     )
 
     image_image_6 = PhotoImage(
-        file=relative_to_assets("image_6.png"))
+        file=relative_to_assets("line.png"))
     image_6 = canvas.create_image(
         208.0,
         320.0,
@@ -318,7 +318,7 @@ def dashboard(caller):
     )
 
     image_image_7 = PhotoImage(
-        file=relative_to_assets("image_7.png"))
+        file=relative_to_assets("line.png"))
     image_7 = canvas.create_image(
         207.0,
         354.0,
@@ -326,7 +326,7 @@ def dashboard(caller):
     )
 
     image_image_8 = PhotoImage(
-        file=relative_to_assets("image_8.png"))
+        file=relative_to_assets("line.png"))
     image_8 = canvas.create_image(
         208.0,
         388.0,
@@ -334,7 +334,7 @@ def dashboard(caller):
     )
 
     image_image_9 = PhotoImage(
-        file=relative_to_assets("image_9.png"))
+        file=relative_to_assets("line.png"))
     image_9 = canvas.create_image(
         208.0,
         422.0,
@@ -342,7 +342,7 @@ def dashboard(caller):
     )
 
     image_image_10 = PhotoImage(
-        file=relative_to_assets("image_10.png"))
+        file=relative_to_assets("line.png"))
     image_10 = canvas.create_image(
         207.0,
         456.0,

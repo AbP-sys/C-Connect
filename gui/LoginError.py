@@ -26,7 +26,7 @@ def error(caller):
     caller.destroy()
     window = Tk()
     window.title('C-Connect')
-    window.geometry("400x400")
+    window.geometry("411x891")
     window.configure(bg = "#FFFFFF")
 
 

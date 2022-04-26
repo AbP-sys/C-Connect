@@ -9,7 +9,7 @@ from pathlib import Path
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 import gui.s_dashboard
-from gui.build import mainmenu
+import mainmenu
 import gui.read_window
 
 

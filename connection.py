@@ -1,10 +1,11 @@
 import pyodbc
 from cassandra.cluster import Cluster
 
-server = 'localhost'
-database = 'CCdB'
-username = 'sa'
-password = 'lqsS1.86PROton'
+# these credentials are for development only. No sensitive data stored in the database.
+server = 'tcp:c-connect.database.windows.net'
+database = 'test-uni'
+username = 'TestUniAdmin'
+password = 'SVDSkvvkjk45'
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 cursor = cnxn.cursor()
 

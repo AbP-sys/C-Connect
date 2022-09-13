@@ -1,4 +1,5 @@
 import connection
+from hashlib import sha256
 
 class userDetails:
     def __init__(self,email, name, DOB, branch, year,type):
@@ -36,3 +37,9 @@ def authentication(user, pwd):
     else:
         #raise ValueError("user not registered")
         return -1
+
+def hash(pwd):
+    hashobj = sha256()
+    hashobj.update(pwd.encode('utf-8'))
+    hash = hashobj.hexdigest()
+    return hash

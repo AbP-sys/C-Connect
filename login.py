@@ -1,4 +1,5 @@
 import connection
+from hashlib import sha256
 
 class userDetails:
     def __init__(self,email, name, DOB, branch, year,type):
@@ -18,16 +19,19 @@ def fetchdetails(uid):
     row = connection.cursor.fetchone()
     return userDetails(row[0],row[1],row[2],row[3],row[4],row[5])
 
-def authentication(user, pwd):
+def authentication(user, e_pwd):
     """
     Runs a query against the database to very credentials
     """
     connection.cursor.execute("SELECT COUNT(username) FROM login WHERE username=?;",user)
     row = connection.cursor.fetchone()
     if(row[0] == 1):
+        connection.cursor.execute("SELECT salt FROM login WHERE username=?;",user)
+        salt = connection.cursor.fetchone()[0]
+        e_pwd = hash(e_pwd.append(salt))
         connection.cursor.execute("SELECT pass FROM login WHERE username=?;",user)
-        row = connection.cursor.fetchone()
-        if(row[0] == pwd):
+        a_pwd = connection.cursor.fetchone()[0]
+        if(a_pwd == e_pwd):
             print("login successful")
             return 0
         else:
@@ -36,3 +40,9 @@ def authentication(user, pwd):
     else:
         #raise ValueError("user not registered")
         return -1
+
+def hash(pwd):
+    hashobj = sha256()
+    hashobj.update(pwd.encode('utf-8'))
+    hash = hashobj.hexdigest()
+    return hash

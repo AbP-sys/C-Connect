@@ -171,7 +171,6 @@ def dashboard(caller,userD):
     )
     def general(window,userD):
         notices = mainmenu.display(userD,1)
-        print (notices[0].subject)
         gen.notif(window,userD,notices)
 
     button_image_5 = PhotoImage(

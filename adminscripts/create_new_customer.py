@@ -5,7 +5,7 @@ from decouple import config
 Adds a new login for the Azure SQL Server 'c-connect'
 '''
 
-server = 'tcp:c-connect.database.windows.net'
+server = 'tcp:c-connect-login.database.windows.net'
 database = 'master'
 username = config('SERVER_ADMIN')
 password = config('ADMIN_PASS')

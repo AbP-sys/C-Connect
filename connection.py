@@ -2,7 +2,7 @@ import pyodbc
 from cassandra.cluster import Cluster
 
 # these credentials are for development only. No sensitive data stored in the database.
-server = 'tcp:c-connect.database.windows.net'
+server = 'tcp:c-connect-login.database.windows.net'
 database = 'test-uni'
 username = 'TestUniAdmin'
 password = 'SVDSkvvkjk45'
@@ -11,4 +11,4 @@ cursor = cnxn.cursor()
 
 
 cluster = Cluster()
-session = cluster.connect('mailhouse')
+session = cluster.connect()

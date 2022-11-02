@@ -10,7 +10,7 @@ def display(user,selection):
 
     print("Viewing:" + userselection[selection])
 
-    result = cassandra.session.execute("SELECT * FROM mails WHERE domain='{}' AND dept='{}' ALLOW FILTERING".format(userselection[selection],user.branch))
+    result = cassandra.session.execute("SELECT * FROM testuni.mails WHERE domain='{}' AND dept='{}' ALLOW FILTERING".format(userselection[selection],user.branch))
     return result
 
 

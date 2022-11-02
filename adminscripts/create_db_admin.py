@@ -1,7 +1,7 @@
 import pyodbc
 from decouple import config
 
-server = 'tcp:c-connect.database.windows.net'
+server = 'tcp:c-connect-login.database.windows.net'
 database = input("Enter the name of the database: ")
 username = config('SERVER_ADMIN')
 password = config('ADMIN_PASS')

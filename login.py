@@ -22,6 +22,7 @@ def authentication(user, ent_pwd):
     """
     Runs a query against the database to very credentials
     """
+    connection.establish_connection()
     connection.cursor.execute("SELECT COUNT(username) FROM login WHERE username=?;",user)
     row = connection.cursor.fetchone()
     if(row[0] == 1):

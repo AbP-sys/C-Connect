@@ -1,13 +1,14 @@
 version: '3'
 
 services:
-  mssql:
-    image: "mcr.microsoft.com/mssql/server:latest"
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=testset
+  mssql-server:
+    container_name: mssql-server
+    image: mcr.microsoft.com/mssql/server:latest
     ports:
       - "1433:1433"
+    environment:
+      SA_PASSWORD: "mssql_password"
+      ACCEPT_EULA: "Y"
 
   cassandra:
     image: "cassandra:latest"

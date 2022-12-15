@@ -1,4 +1,5 @@
-These scripts are for the owners of the C-Connect app to manage customers (educational institutions). Do not include this folder when packaging for customers.
+# Admin scripts
+These scripts are for the proprietors and maintainers of the C-Connect app to manage customers (educational institutions). Do not include this folder while packaging for customers.
 
 ## Getting started: 
 - Create a .env file and acquire/create credentials for Azure SQLServer server-admin and populate the .env file.

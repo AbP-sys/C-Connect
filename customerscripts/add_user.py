@@ -15,6 +15,7 @@ passw = login.hash(passw.encode('utf-8')+salt) #hash password along with the sal
 sqlcommand = '''
 INSERT INTO login VALUES(?,?,?);
 '''
+connection.establish_connection()
 connection.cursor.execute(sqlcommand,username,passw,salt)
 connection.cnxn.commit()
 

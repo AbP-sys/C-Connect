@@ -1,8 +1,8 @@
 import pyodbc
 from decouple import config
 
-server = 'tcp:c-connect-login.database.windows.net'
-database = 'test-uni'
+server = 'localhost'
+database = 'testuni'
 with open("credentials.txt", "r") as o:
     username = o.readline()
     password = o.readline()
